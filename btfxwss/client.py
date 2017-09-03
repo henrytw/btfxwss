@@ -191,6 +191,30 @@ class BtfxWss:
         """
         return self.queue_processor.account['Notifications']
 
+    @property
+    def offer_new(self):
+        """Return new offers associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Offer New']
+
+    @property
+    def offer_update(self):
+        """Return update offers associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Offer Update']
+
+    @property
+    def offer_cancel(self):
+        """Return cancel offers associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Offer Cancel']
+
     ##############################################
     # Client Initialization and Shutdown Methods #
     ##############################################
