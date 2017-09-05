@@ -176,12 +176,12 @@ class BtfxWss:
         return self.queue_processor.channel_directory
 
     @property
-    def funding_trades(self):
+    def historical_funding_trades(self):
         """Return funding trades associacted with the user account.
 
         :return: Queue()
         """
-        return self.queue_processor.account['Funding_trades']
+        return self.queue_processor.account['Historical Funding Trades']
 
     @property
     def notifications(self):
@@ -214,6 +214,54 @@ class BtfxWss:
         :return: Queue()
         """
         return self.queue_processor.account['Offer Cancel']
+
+    @property
+    def credit_update(self):
+        """Return update credits associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Credit Update']
+
+    @property
+    def credit_close(self):
+        """Return close credits associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Credit Close']
+
+    @property
+    def funding_trades(self):
+        """Return funding trades associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Funding Trades']
+
+    @property
+    def funding_update(self):
+        """Return update funding associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Funding Update']
+
+    @property
+    def wallet_update(self):
+        """Return update wallet associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Wallet Update']
+
+    @property
+    def opened(self):
+        """Return if connection is opened.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Opened']
 
     ##############################################
     # Client Initialization and Shutdown Methods #

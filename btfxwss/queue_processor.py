@@ -80,10 +80,17 @@ class QueueProcessor(Thread):
                                       'hfos': 'Historical Offers',
                                       'hfcs': 'Historical Credits',
                                       'hfls': 'Historical Loans',
-                                      'htfs': 'Funding Trades',
+                                      'htfs': 'Historical Funding Trades',
                                       'n': 'Notifications',
-                                      'fon': 'Offer New', 'fou': 'Offer Update',
-                                      'foc': 'Offer Cancel'}
+                                      'fon': 'Offer New',
+                                      'fou': 'Offer Update',
+                                      'foc': 'Offer Cancel',
+                                      'fcu': 'Credit Update',
+                                      'fcc': 'Credit Close',
+                                      'fte': 'Funding Trades',
+                                      'ftu': 'Funding Update',
+                                      'wu': 'Wallet Update',
+                                      'opened': 'Opened'}
 
     def join(self, timeout=None):
         """Set sentinel for run() method and join thread.

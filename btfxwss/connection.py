@@ -178,6 +178,7 @@ class WebSocketConnection(Thread):
         self.log.info("Connection opened")
         self.connected.set()
         self.send_ping()
+        self._data_handler([0, 'opened'], time.time())
         self._start_timers()
 
     def _on_error(self, ws, error):
