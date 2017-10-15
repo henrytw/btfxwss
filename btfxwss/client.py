@@ -256,6 +256,70 @@ class BtfxWss:
         return self.queue_processor.account['Wallet Update']
 
     @property
+    def order_new(self):
+        """Return new orders associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Order New']
+
+    @property
+    def order_update(self):
+        """Return update orders associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Order Update']
+
+    @property
+    def order_cancel(self):
+        """Return cancel orders associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Order Cancel']
+
+    @property
+    def position_update(self):
+        """Return update positions associated with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Position Update']
+
+    @property
+    def position_close(self):
+        """Return close positions associated with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Position Close']
+
+    @property
+    def loan_update(self):
+        """Return update loans associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Loan Update']
+
+    @property
+    def loan_close(self):
+        """Return close loans associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Loan Close']
+
+    @property
+    def unknown(self):
+        """Return unknown associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Unknown']
+
+    @property
     def opened(self):
         """Return if connection is opened.
 

@@ -90,6 +90,14 @@ class QueueProcessor(Thread):
                                       'fte': 'Funding Trades',
                                       'ftu': 'Funding Update',
                                       'wu': 'Wallet Update',
+                                      'on': 'Order New',
+                                      'ou': 'Order Update',
+                                      'oc': 'Order Cancel',
+                                      'pu': 'Position Update',
+                                      'pc': 'Position Close',
+                                      'flu': 'Loan Update',
+                                      'flc': 'Loan Close',
+                                      'ats': 'Unknown',
                                       'opened': 'Opened'}
 
     def join(self, timeout=None):
