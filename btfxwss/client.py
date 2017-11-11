@@ -216,6 +216,14 @@ class BtfxWss:
         return self.queue_processor.account['Offer Cancel']
 
     @property
+    def credit_new(self):
+        """Return new credits associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Credit New']
+
+    @property
     def credit_update(self):
         """Return update credits associacted with the user account.
 
@@ -294,6 +302,14 @@ class BtfxWss:
         :return: Queue()
         """
         return self.queue_processor.account['Position Close']
+
+    @property
+    def loan_new(self):
+        """Return new loans associacted with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Loan New']
 
     @property
     def loan_update(self):
