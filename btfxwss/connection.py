@@ -33,7 +33,7 @@ class WebSocketConnection(Thread):
         :param url: websocket address, defaults to v2 websocket.
         :param timeout: timeout for connection; defaults to 10s
         :param reconnect_interval: interval at which to try reconnecting;
-                                   defaults to 10s.
+                                   defaults to 1s.
         :param log_level: logging level for the connection Logger. Defaults to
                           logging.INFO.
         :param kwargs: kwargs for Thread.__ini__()
@@ -49,7 +49,7 @@ class WebSocketConnection(Thread):
         self.connected = Event()
         self.disconnect_called = Event()
         self.reconnect_required = Event()
-        self.reconnect_interval = reconnect_interval if reconnect_interval else 10
+        self.reconnect_interval = reconnect_interval if reconnect_interval else 1
         self.paused = Event()
 
         # Setup Timer attributes
@@ -171,6 +171,7 @@ class WebSocketConnection(Thread):
 
     def _on_close(self, ws, *args):
         self.log.info("Connection closed")
+        self.reconnect_required.set()
         self.connected.clear()
         self._stop_timers()
 
