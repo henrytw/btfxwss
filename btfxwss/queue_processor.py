@@ -94,6 +94,7 @@ class QueueProcessor(Thread):
                                       'on': 'Order New',
                                       'ou': 'Order Update',
                                       'oc': 'Order Cancel',
+                                      'pn': 'Position New',
                                       'pu': 'Position Update',
                                       'pc': 'Position Close',
                                       'fln': 'Loan New',

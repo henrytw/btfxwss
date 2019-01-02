@@ -288,6 +288,14 @@ class BtfxWss:
         return self.queue_processor.account['Order Cancel']
 
     @property
+    def position_new(self):
+        """Return new positions associated with the user account.
+
+        :return: Queue()
+        """
+        return self.queue_processor.account['Position New']
+
+    @property
     def position_update(self):
         """Return update positions associated with the user account.
 
