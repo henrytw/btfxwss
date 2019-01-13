@@ -129,7 +129,11 @@ class WebSocketConnection(Thread):
                 # We need to set this flag since closing the socket will
                 # set it to False
                 self.socket.keep_running = True
-                self.socket.run_forever(sslopt=sslopt_ca_certs)
+                try:
+                    self.socket.run_forever(sslopt=sslopt_ca_certs)
+                except:
+                    self.log.info("Socket error.")
+                    break
 
     def run(self):
         """Main method of Thread.
@@ -137,7 +141,8 @@ class WebSocketConnection(Thread):
         :return:
         """
         self.log.debug("run(): Starting up..")
-        self._connect()
+        while True:
+            self._connect()
 
     def _on_message(self, ws, message):
         """Handles and passes received data to the appropriate handlers.
