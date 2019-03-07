@@ -371,6 +371,11 @@ class BtfxWss:
         self.conn.disconnect()
         self.queue_processor.join()
 
+    def restart(self):
+        """Restart the client.
+        """
+        self.conn.reconnect()
+
     ##########################
     # Data Retrieval Methods #
     ##########################
