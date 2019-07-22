@@ -59,7 +59,7 @@ class WebSocketConnection(Thread):
 
         # Tracks Websocket Connection
         self.connection_timer = None
-        self.connection_timeout = timeout if timeout else 10
+        self.connection_timeout = timeout if timeout else 20
 
         # Tracks responses from send_ping()
         self.pong_timer = None
